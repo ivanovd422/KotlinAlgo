@@ -10,6 +10,7 @@ fun main() {
     println(result)
 }
 
+// DFS
 private fun preorderTraversal(root: TreeNode?): List<String> {
     val answer: MutableList<String> = ArrayList()
     val stack: Stack<TreeNode> = Stack<TreeNode>()

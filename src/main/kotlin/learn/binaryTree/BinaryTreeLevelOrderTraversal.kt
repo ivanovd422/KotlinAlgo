@@ -9,7 +9,7 @@ fun main() {
     println(result)
 }
 
-
+// BFS
 private fun levelOrder(root: TreeNode?): List<List<String>> {
     val ans: MutableList<List<String>> = ArrayList()
     val q: Queue<TreeNode> = LinkedList()
