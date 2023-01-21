@@ -2,7 +2,7 @@ package utils
 
 
 class TreeNode(
-    val value: String
+    val `val`: String
 ) {
     var left: TreeNode? = null
     var right: TreeNode? = null
