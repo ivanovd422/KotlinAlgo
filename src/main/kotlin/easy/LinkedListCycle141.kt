@@ -36,3 +36,19 @@ private fun hasCycle(head: ListNode?): Boolean {
     return false
 
 }
+
+private fun hasCycleConstantSpace(head: ListNode?): Boolean {
+    var slow = head
+    var fast = head?.next
+
+    while (fast != null) {
+        if (fast == slow) {
+            return true
+        }
+
+        slow = slow?.next
+        fast = fast?.next?.next
+    }
+
+    return false
+}

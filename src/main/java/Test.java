@@ -1,15 +1,7 @@
 
-
-
-
-
 public class Test {
     public static void main(String[] args) {
-        String example = "TEST";
-        int[] char_count = new int[26];
-
-        var test = example.charAt(0);
-        char_count[test]++;
-
+        int[] array = new int[]{1,2,3,4,5,6,7,8,9}; //10
     }
+
 }
