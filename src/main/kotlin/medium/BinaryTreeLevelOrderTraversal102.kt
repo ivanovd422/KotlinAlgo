@@ -9,34 +9,29 @@ fun main() {
 
 private fun levelOrder(root: TreeNode?): List<List<Int>> {
     if (root == null) return listOf()
-    val finalList: MutableList<MutableList<Int>> = mutableListOf()
+    val result: MutableList<MutableList<Int>> = mutableListOf()
     val queue: Queue<TreeNode> = LinkedList()
-    val childQueue: Queue<TreeNode> = LinkedList()
     queue.add(root)
-    var currentLayer = mutableListOf<Int>()
 
-    while (queue.isNotEmpty()) {
-        val currentNode = queue.poll()
-        currentLayer.add(currentNode.`val`.toInt())
+    while (queue.isEmpty().not()) {
+        val list = mutableListOf<Int>()
+        val size = queue.size
 
-        if (currentNode.left != null) {
-            childQueue.add(currentNode.left)
-        }
+        for (i in 0 until size) {
+            val node = queue.poll()
 
-        if (currentNode.right != null) {
-            childQueue.add(currentNode.right)
-        }
+            list.add(node.`val`.toInt())
 
-        if (queue.isEmpty()) {
-            finalList.add(currentLayer)
-            currentLayer = mutableListOf()
+            if (node.left != null) {
+                queue.add(node.left)
+            }
 
-            while (childQueue.isNotEmpty()) {
-                queue.add(childQueue.poll())
+            if (node.right != null) {
+                queue.add(node.right)
             }
         }
-
+        result.add(list)
     }
 
-    return finalList
+    return result
 }
